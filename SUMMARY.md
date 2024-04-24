@@ -38,12 +38,12 @@
 
 * [6 SDK Development](6-SDKDevelopment/README.md)
   * [6.1 Python](6-SDKDevelopment/6.1-ApplicationBasePython.md)
-    * [1 Environment Building](10-ApplicationBasePython/10.1_320_PI-ApplicationPython/1_download.md)
-    * [2 Introduction to API](10-ApplicationBasePython/10.1_320_PI-ApplicationPython/2_API.md)
-    * [3 TCP/IP Control](10-ApplicationBasePython/10.1_320_PI-ApplicationPython/3_TCPIP.md)
-    * [4 Drag to teach](10-ApplicationBasePython/10.2_320_M5-ApplicationPython/4_drag.md)
-    * [5 Handle Control](10-ApplicationBasePython/10.1_320_PI-ApplicationPython/5_Handle_control.md)
-    * [6 Videos and Codes for Display](10-ApplicationBasePython/10.2_320_M5-ApplicationPython/5_example.md)
+    * [1 Environment Building](./6-SDKDevelopment/6.1-Python/6.1.1-EnvironmentConfiguration.md)
+    * [2 Introduction to API](./6-SDKDevelopment/6.1-Python/6.1.2-ApplicationBasePython.md)
+    <!-- * [3 TCP/IP Control](10-ApplicationBasePython/10.1_320_PI-ApplicationPython/3_TCPIP.md) -->
+    * [3 Drag to teach](./6-SDKDevelopment/6.1-Python/61.4-Drag_teach.md)
+    <!-- * [5 Handle Control](10-ApplicationBasePython/10.1_320_PI-ApplicationPython/5_Handle_control.md) -->
+    * [4 Use Cases](./6-SDKDevelopment/6.1-Python/6.1.3-PythonDemo.md)
   * [6.2 Robot Operating System 1 (ROS1) ](6-SDKDevelopment/6.2-ApplicationBaseROS1.md)
     * [1 Environment Building](11-ApplicationBaseROS/11.1-ROS1/11.1.1-320M5/11.1.1.1-环境搭建.md)
     * [2 ROS basics](11-ApplicationBaseROS/11.1-ROS1/11.1.1-320M5/11.1.1.2-ROS基础.md)
