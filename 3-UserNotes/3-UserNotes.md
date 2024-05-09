@@ -23,4 +23,4 @@
 ----
 
 如果您已经阅读了本章的全部内容，请继续阅读下一章。   <br>
-[← 上一章](/2-ProductFeature/2.1_320_M5_product/M5.md) | [下一章 →](/4-FirstInstallAndUse/4.2-M5/4.2_320_M5_firstUse.md)
+[← 上一章](/2-ProductFeature) | [下一章 →](/4-FirstInstallAndUse)
