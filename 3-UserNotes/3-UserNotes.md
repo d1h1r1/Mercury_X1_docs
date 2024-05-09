@@ -6,16 +6,16 @@
 
 ## 
 
-- [Safety Information](3.1-SafetyInstruction.md)    
+- [安全须知](3.1-SafetyInstruction.md)    
     包括责任、安全警告标志、一般安全规则、人身安全和应急响应。
 
-- [Transportation and Storage](3.2-TransportandStorage.md)    
+- [运输和储存](3.2-TransportandStorage.md)    
     描述包装、运输和长期储存要求以及责任。
 
-- [Maintenance and Care](3.3-MaintenanceandCare.md)  
+- [维护和保养](3.3-MaintenanceandCare.md)  
     提供日常维护指导，以延长产品使用寿命。
 
-- [FAQs and Solutions](3.4-FAQsandSolutions.md)    
+- [常见问题及解决方案](3.4-FAQsandSolutions.md)    
     提供快速解决常见问题的导航指南。
 
 通过仔细阅读本节，用户将更好地了解如何安全有效地使用产品，最大限度地提高性能和使用寿命。
@@ -23,4 +23,4 @@
 ----
 
 如果您已经阅读了本章的全部内容，请继续阅读下一章。   <br>
-[← Previous Chapter](/2-ProductFeature/2.1_320_M5_product/M5.md) | [Next Chapter →](/4-FirstInstallAndUse/4.2-M5/4.2_320_M5_firstUse.md)
+[← 上一章](/2-ProductFeature/2.1_320_M5_product/M5.md) | [下一章 →](/4-FirstInstallAndUse/4.2-M5/4.2_320_M5_firstUse.md)
