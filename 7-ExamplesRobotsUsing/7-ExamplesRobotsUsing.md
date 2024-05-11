@@ -2,142 +2,177 @@
 
 本章节呈现了经典的机械臂使用案例，以展示产品在富有代表性的场景中的应用。这包括了机械臂在不同领域的典型应用，突显了产品的多功能性和适用性。通过这些案例，用户可以深入了解机械臂在实际应用中的灵活性和效能，为他们在特定场景中的应用提供参考。
 
-**1、画画案例：**
+**移动抓取木块案例**
 
 ```python
-from pymycobot.mycobot import MyCobot
-import time
-import math
+from uvc_camera import UVCCamera
+from arm_control import *
+from marker_utils import *
+import stag
+from mercury_ros_api import MapNavigation
 
-# 创建 MyCobot 实例，指定串口和波特率
-mc = MyCobot('COM3',115200)
+# 夹爪工具长度
+Tool_LEN = 175
+# 相机中心到法兰距离                                          
+Camera_LEN = 78                                         
+np.set_printoptions(suppress=True, formatter={'float_kind': '{:.2f}'.format})
+# 相机配置文件
+camera_params = np.load("src/camera_params.npz")        
+mtx, dist = camera_params["mtx"], camera_params["dist"]
+# 二维码大小
+MARKER_SIZE = 32   
+# 设置左臂端口                                     
+ml = Mercury("/dev/ttyTHS0")                            
 
-# 发送目标坐标点，使机械臂移动到指定位置
-mc.send_coords([52.9, -64.4, 409.7, -91.23, -0.25, -89.81], 50, 0)
-# 暂停 2 秒
-time.sleep(2)
 
-# 发送目标坐标点，使机械臂移动到另一个指定位置
-mc.send_coords([21.5, 145.5, 233.6, -89.72, 19.19, 13.45], 50, 0)
-# 暂停 2 秒
-time.sleep(2)
+# 将旋转矩阵转为欧拉角
+def CvtRotationMatrixToEulerAngle(pdtRotationMatrix):
+    pdtEulerAngle = np.zeros(3)
+    pdtEulerAngle[2] = np.arctan2(pdtRotationMatrix[1, 0], pdtRotationMatrix[0, 0])
+    fCosRoll = np.cos(pdtEulerAngle[2])
+    fSinRoll = np.sin(pdtEulerAngle[2])
+    pdtEulerAngle[1] = np.arctan2(-pdtRotationMatrix[2, 0],
+                                  (fCosRoll * pdtRotationMatrix[0, 0]) + (fSinRoll * pdtRotationMatrix[1, 0]))
+    pdtEulerAngle[0] = np.arctan2((fSinRoll * pdtRotationMatrix[0, 2]) - (fCosRoll * pdtRotationMatrix[1, 2]),
+                                  (-fSinRoll * pdtRotationMatrix[0, 1]) + (fCosRoll * pdtRotationMatrix[1, 1]))
+    return pdtEulerAngle
 
-# 循环发送目标坐标点，使机械臂按圆形轨迹运动
-for i in range(1, 361):
-    x = 21.5 + 30 * math.cos(i / 180.0 * math.pi)
-    y = 145.5 + 30 * math.sin(i / 180.0 * math.pi)
-    mc.send_coords([x, y, 233.6, -89.72, 19.19, 13.45], 100, 0)
-    # 暂停 0.7 秒
-    time.sleep(0.7)
 
-# 发送目标坐标点，使机械臂回到初始位置
-mc.send_coords([52.9, -64.4, 409.7, -91.23, -0.25, -89.81], 50, 0)
-‵‵‵
+# 将欧拉角转为旋转矩阵
+def CvtEulerAngleToRotationMatrix(ptrEulerAngle):
+    ptrSinAngle = np.sin(ptrEulerAngle)
+    ptrCosAngle = np.cos(ptrEulerAngle)
+    ptrRotationMatrix = np.zeros((3, 3))
+    ptrRotationMatrix[0, 0] = ptrCosAngle[2] * ptrCosAngle[1]
+    ptrRotationMatrix[0, 1] = ptrCosAngle[2] * ptrSinAngle[1] * ptrSinAngle[0] - ptrSinAngle[2] * ptrCosAngle[0]
+    ptrRotationMatrix[0, 2] = ptrCosAngle[2] * ptrSinAngle[1] * ptrCosAngle[0] + ptrSinAngle[2] * ptrSinAngle[0]
+    ptrRotationMatrix[1, 0] = ptrSinAngle[2] * ptrCosAngle[1]
+    ptrRotationMatrix[1, 1] = ptrSinAngle[2] * ptrSinAngle[1] * ptrSinAngle[0] + ptrCosAngle[2] * ptrCosAngle[0]
+    ptrRotationMatrix[1, 2] = ptrSinAngle[2] * ptrSinAngle[1] * ptrCosAngle[0] - ptrCosAngle[2] * ptrSinAngle[0]
+    ptrRotationMatrix[2, 0] = -ptrSinAngle[1]
+    ptrRotationMatrix[2, 1] = ptrCosAngle[1] * ptrSinAngle[0]
+    ptrRotationMatrix[2, 2] = ptrCosAngle[1] * ptrCosAngle[0]
+    return ptrRotationMatrix
 
-**2、跳舞案例:**
 
-```python
-from pymycobot.mycobot import MyCobot
-import time
+# 坐标转换为齐次变换矩阵，（x,y,z,rx,ry,rz）单位rad
+def Transformation_matrix(coord):
+    position_robot = coord[:3]
+    pose_robot = coord[3:]
+    # 将欧拉角转为旋转矩阵
+    RBT = CvtEulerAngleToRotationMatrix(pose_robot)          
+    PBT = np.array([[position_robot[0]],
+                    [position_robot[1]],
+                    [position_robot[2]]])
+    temp = np.concatenate((RBT, PBT), axis=1)
+    array_1x4 = np.array([[0, 0, 0, 1]])
+    # 将两个数组按行拼接起来
+    matrix = np.concatenate((temp, array_1x4), axis=0)       
+    return matrix
 
-if __name__ == '__main__':
-    # 创建 MyCobot 实例，指定串口和波特率
-    mc = MyCobot('COM3',115200)
 
-    # 设置开始开始时间
-    start = time.time()
-    # 让机械臂到达指定位置
-    mc.send_angles([-1.49, 115, -153.45, 30, -33.42, 137.9], 80)
-    # 判断其是否到达指定位置
-    while not mc.is_in_position([-1.49, 115, -153.45, 30, -33.42, 137.9], 0):
-        # 让机械臂恢复运动
-        mc.resume()
-        # 让机械臂移动0.5s
-        time.sleep(0.5)
-        # 暂停机械臂移动
-        mc.pause()
-        # 判断移动是否超时
-        if time.time() - start > 3:
-            break
-    # 设置开始时间
-    start = time.time()
-    # 让运动持续30秒
-    while time.time() - start < 30:
-        # 让机械臂快速到达该位置
-        mc.send_angles([-1.49, 115, -153.45, 30, -33.42, 137.9], 80)
-        # 将灯的颜色为[0,0,50]
-        mc.set_color(0, 0, 50)
-        time.sleep(0.7)
-        # 让机械臂快速到达该位置
-        mc.send_angles([-1.49, 55, -153.45, 80, 33.42, 137.9], 80)
-        # 将灯的颜色为[0,50,0]
-        mc.set_color(0, 50, 0)
-        time.sleep(0.7)
-```
+def Eyes_in_hand_left(coord, camera):
+    # 相机坐标
+    Position_Camera = np.transpose(camera[:3])  
+    # 机械臂坐标矩阵             
+    Matrix_BT = Transformation_matrix(coord)      
+    # 手眼矩阵           
+    Matrix_TC = np.array([[0, -1, 0, Camera_LEN],            
+                          [1, 0, 0, 0],
+                          [0, 0, 1, -Tool_LEN],
+                          [0, 0, 0, 1]])
+    # 物体坐标（相机系）
+    Position_Camera = np.append(Position_Camera, 1) 
+    # 物体坐标（基坐标系）         
+    Position_B = Matrix_BT @ Matrix_TC @ Position_Camera     
+    return Position_B
 
-**3、木块搬运案例：**
 
-```python
-from pymycobot import PI_PORT, PI_BAUD
-import time
-def gripper_test(mc):
-    print("Start check IO part of api\n")
-    # 检测夹爪是否正在移动
-    flag = mc.is_gripper_moving()
-    print("Is gripper moving: {}".format(flag))
-    time.sleep(1)
+# 等待机械臂运行结束
+def waitl():
+    time.sleep(0.2)
+    while (ml.is_moving()):
+        time.sleep(0.03)
 
-    # Set the current position to (2048).
-    # Use it when you are sure you need it.
-    # Gripper has been initialized for a long time. Generally, there
-    # is no need to change the method.
-    # mc.set_gripper_ini()
-    # 设置关节点1，让其转动到2048这个位置
-    mc.set_encoder(1, 2048)
-    time.sleep(2)
-    # 设置六个关节位，让机械臂以20的速度转动到该位置
 
-    mc.set_encoders([1024, 1024, 1024, 1024, 1024, 1024], 20)
-    # mc.set_encoders([2048, 2900, 2048, 2048, 2048, 2048], 20)
-    # mc.set_encoders([2048, 3000,3000, 3000, 2048, 2048], 50)
-    time.sleep(3)
-    # 获取关节点1的位置信息
-    print(mc.get_encoder(1))
-    # 设置夹爪转动到2048这个位置
-    mc.set_encoder(7, 2048)
-    time.sleep(3)
-    # 设置夹爪让其转到1300这个位置
-    mc.set_encoder(7, 1300)
-    time.sleep(3)
+# 获取物体坐标(相机系)
+def calc_markers_base_position(corners: NDArray, ids: T.List, marker_size: int, mtx: NDArray, dist: NDArray) -> T.List:
+    if len(corners) == 0:
+        return []
+    # 通过二维码角点获取物体旋转向量和平移向量
+    rvecs, tvecs = solve_marker_pnp(corners, marker_size, mtx, dist)     
+    for i, tvec, rvec in zip(ids, tvecs, rvecs):
+        tvec = tvec.squeeze().tolist()
+        rvec = rvec.squeeze().tolist()
+        rotvector = np.array([[rvec[0], rvec[1], rvec[2]]])
+        # 将旋转向量转为旋转矩阵
+        Rotation = cv2.Rodrigues(rotvector)[0]               
+        # 将旋转矩阵转为欧拉角                   
+        Euler = CvtRotationMatrixToEulerAngle(Rotation)    
+        # 物体坐标(相机系)                     
+        target_coords = np.array([tvec[0], tvec[1], tvec[2], Euler[0], Euler[1], Euler[2]])                                             
+    return target_coords
 
-    # 以70的速度让夹爪到达2048状态，2048会报错，故改成255
-    mc.set_gripper_value(255, 70)
-    time.sleep(3)
-    # 以70的速度让夹爪到达1500状态，1500会报错，故改成255
-    mc.set_gripper_value(255, 70)
-    time.sleep(3)
-   
-    num=5
-    while num>0:
-        # 设置夹爪的状态，让其以70的速度快速打开爪子
-        mc.set_gripper_state(0, 70)
-        time.sleep(3)
-        # 设置夹爪的状态，让其以70的速度快速收拢爪子
-        mc.set_gripper_state(1, 70)
-        time.sleep(3)
-        num-=1
-
-    # 获取夹爪的值
-    print("")
-    print(mc.get_gripper_value())
-    # mc.release_all_servos()
 
 if __name__ == "__main__":
-    # 创建 MyCobot 实例，指定串口和波特率
-    mc = MyCobot('COM3',115200)
-
-    mc.set_encoders([2048, 2048, 2048, 2048, 2048, 2048], 20)
-    time.sleep(3)
-    gripper_test(mc)
+    # 导航到目标点
+    flag_feed_goalReached = MapNavigation.moveToGoal(1.8811798181533813, 1.25142673254013062, 0.9141818042023212,0.4053043657122249)
+    # 判断是否到达导航点
+    if flag_feed_goalReached:  
+        # 设置摄像头id                  
+        camera = UVCCamera(5, mtx, dist)  
+         # 打开摄像头
+        camera.capture()                                       
+        # 设置左臂观察点
+        origin_anglesL = [-44.24, 15.56, 0.0, -102.59, 65.28, 52.06, 23.49]  
+        # 设置夹爪运动模式
+        ml.set_gripper_mode(0)                                  
+        # 设置工具坐标系
+        ml.set_tool_reference([0, 0, Tool_LEN, 0, 0, 0])             
+        # 将末端坐标系设置为工具        
+        ml.set_end_type(1)                                  
+        # 设置移动速度                 
+        sp = 40                                            
+        # 移动到观测点                  
+        ml.send_angles(origin_anglesL, sp)                               
+        # 等待机械臂运动结束    
+        waitl()                                                            
+         # 刷新相机界面  
+        camera.update_frame()                                               
+        # 获取当前帧
+        frame = camera.color_frame()                                         
+        # 获取画面中二维码的角度和id
+        (corners, ids, rejected_corners) = stag.detectMarkers(frame, 11)  
+        # 获取物的坐标(相机系)
+        marker_pos_pack = calc_markers_base_position(corners, ids, MARKER_SIZE, mtx, dist)   
+        # 获取机械臂当前坐标
+        cur_coords = np.array(ml.get_base_coords())                                   
+        # 将角度值转为弧度值       
+        cur_bcl = cur_coords.copy()
+        cur_bcl[-3:] *= (np.pi / 180)                                        
+         # 通过矩阵变化将物体坐标(相机系)转成(基坐标系)
+        fact_bcl = Eyes_in_hand_left(cur_bcl, marker_pos_pack)              
+        target_coords = cur_coords.copy()
+        target_coords[0] = fact_bcl[0]
+        target_coords[1] = fact_bcl[1]
+        target_coords[2] = fact_bcl[2] + 50
+        # 机械臂移动到二维码上方
+        ml.send_base_coords(target_coords, 30)                          
+        # 等待机械臂运动结束
+        waitl()                                                 
+         # 打开夹爪              
+        ml.set_gripper_value(100, 100)                     
+        # 机械臂沿z轴向下移动
+        ml.send_base_coord(3, fact_bcl[2], 10)                    
+        # 等待机械臂运动结束
+        waitl()       
+        # 闭合夹爪                                                        
+        ml.set_gripper_value(20, 100)                       
+     
+        # 等待夹爪闭合       
+        time.sleep(2)                                             
+            
+        # 抬起夹爪
+        ml.send_base_coord(3, fact_bcl[2] + 50, 10)                
 
 ```
