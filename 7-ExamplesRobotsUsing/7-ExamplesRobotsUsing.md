@@ -1,4 +1,4 @@
-#7 Robot arm usage scenario case
+# 7 Robot arm usage scenario case
 
 This chapter presents classic robotic arm use cases to demonstrate the application of the product in representative scenarios. This includes typical applications of robotic arms in different fields, highlighting the product's versatility and applicability. Through these cases, users can gain an in-depth understanding of the flexibility and performance of the robotic arm in practical applications, providing a reference for their application in specific scenarios.
 
