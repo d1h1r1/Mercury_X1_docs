@@ -174,5 +174,4 @@ if __name__ == "__main__":
             
          # Lift the gripper
          ml.send_base_coord(3, fact_bcl[2] + 50, 10)
-
 ```
