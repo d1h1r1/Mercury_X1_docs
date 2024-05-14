@@ -26,7 +26,7 @@
 
 - 答:配置文件中的OpenCV路径与系统实际路径不匹配。你需要使用sudo命令修改配置文件(路径为“/opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake”)。系统的实际OpenCV路径位于“/usr/include/”路径下。
 
-**问:只需克隆mycobot_ros包，然后直接运行rosrun程序。出现诸如“package”mycobot_280“not found”之类的错误或诸如无法找到文件之类的错误?**
+**问:只需克隆mercury_x1_ros包，然后直接运行rosrun程序。出现诸如“package”mercury_x1_ros“not found”之类的错误或诸如无法找到文件之类的错误?**
 
 - 答:新克隆的mercury_x1_ros需要构建ROS环境编译的代码。终端输入
 
