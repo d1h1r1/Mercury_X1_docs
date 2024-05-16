@@ -1,88 +1,77 @@
-# How To Ask Questions Gracefully
 
-### 1 When asking questions in various places, you will find several phenomena:
+# 如何优雅地提出问题
 
-* No answer after asking question.
-* It took a long time for the question to be answered.
-* The other party always despise me and do nothing.
+### 1 在各个地方提出问题时，您会发现几种现象：
 
+* 提出问题后没有答案。
+* 回答这个问题花了很长时间。
+* 另一方总是忽略我，什么也不做。
+### 2 在提出问题之前，请确保您已经研究了文档。
 
-### 2 Before asking questions, make sure you have studied the document.
+在此过程中将解决许多问题。一开始，请勿在QQ组，论坛，问题或电子邮件中提出问题。一开始在文档中解释的许多问题可能不会在社区及时回答。为了节省每个人的时间，为了获得更好的社区环境，每个人都可以更好地共同成长，请互相了解。
 
-Many problems will be solved during this process. Do not ask questions in QQ groups, forums, issues, or emails at the very beginning. Many problems explained in the document at the beginning may not be answered in a timely by the community. To save everyone's time, and for a better community environment, everyone can grow together better, please understand each other.
+### 3 提问时，尽量做到以下几点，这样可以大大增加快速解决问题的机会：
 
+#### 弄清楚发生了什么以及我做了什么，包括：
 
-### 3 When asking questions, try to do the following, which will greatly increase the chances of a quick resolution:
+* 我想达到什么效果和功能？
 
-####  To figure out what's going on and what I did, including:
+* 为了达到这种效果，我该怎么做，详细的过程是什么？
 
-* What effect and what function do I want to achieve?
+* 在实施过程中，发生了什么错误，出现了什么现象（例如，报错是什么，**完整**错误内容是什么？
 
-* In order to achieve this effect, how do I do it and what is the detailed process?
+* 我是否仔细阅读了错误消息，错误消息中是否有任何错误原因和解决方案的指示？
 
-* In the process of implementation, what error occurred and what is the phenomenon (for example, what is the error reported, what is the **complete** error content?)
+* 根据这些错误信息，请仔细思考，我能解决问题吗？
 
-* Have I read the error message carefully, and is there any indication of the cause and solution of the error in the error message?
+* 我可以通过搜索文档、问题和使用搜索引擎来找到问题的解决方案吗？
 
-* Based on these error messages, think carefully, can I solve the problem?
+### 4 如果自己实在解决不了问题，需要找人帮忙，需要考虑：
 
-* Can I find a solution to the problem by searching the documentation, issues, and using a search engine?
+* 问谁，在哪里问，谁有更好的机会回答我的问题？那么实时呢？
 
-### 4 If you really can't solve the problem yourself, you need to ask someone for help, and you need to consider:
+* 我应该给他什么数据和现象，让他愿意帮我快速解决问题？
+  * 提供我的目的（让回答者知道你在做什么）。
+  * 提供完整的实施过程和过程中发生的现象（让回答者按照你的流程再做一遍，即问题复发）。
+  * 给出错误的位置，指出现象或结果与您预期的不同之处！（让回答者知道，哪里没有达到预期）。
+  * 对于出现的错误信息，需要完整，截图越多，日志多一点，不要吝啬拍一张小照片，或者给出一部分日志（因为回答者可能已经很久没有这样做了，他们忘记了一些细节，需要依靠截图和完整的日志来快速回忆。并且根据详细的日志，他们可以快速定位问题所在）。
+  * 如何以更诚恳的态度提问，即使我什么都不懂，大家也愿意回答。
 
-* Who to ask, where to ask, and who has a better chance of answering my question? And how about real-time?
+### 5 问题模板
 
-* What data and phenomena should I give him so that he is willing to help me solve the problem quickly?
-  * Provide my purpose (to let the answerer know what you are doing).
-  * Provide the complete implementation process and the phenomena that occur in the process (for the answerer to follow your process to do it again, that is, the problem recurs).
-  * Give the wrong place, indicate where the phenomenon or result is different from what you expected! (Let the answerer know, where did not meet expectations).
-  * For the error information that appears, it needs to be complete, as many screenshots as possible, more logs, don't be stingy to take a small picture, or give a part of the log (because the answerer may not have done this for a long time, they forgot some details, and they need to rely on screenshots and complete logs to quickly recall.And according to the detailed logs, they can quickly locate where the problem is).
+尽量优雅地提问，不添加多余的情态助词，抱怨词汇，考虑每一个单词和标点符号，从回答者的角度思考问题，以及如何让回答者帮我快速解决问题。单词太少会使问题难以描述，单词太多会使回答者不耐烦。
 
-* How to ask questions with a more sincere attitude, even if I don't understand anything, everyone is willing to answer.
+### 6 标题
 
+无论在哪里提问（包括`QQ群`），为您的问题准备一个大约`30`字的标题，阐明问题的中心思想，包括：
+* 要明确区分问题的类型，是要问的问题，还是提交bug，还是经验分享等等。让应答者在充满文本的屏幕上立即找到您要做的事情。
+* 一句话阐明问题的核心，如`运行相机示例程序，报错复位失败，可能是硬件问题`。
+所以合成后的标题可以是这样的：
+* `[Mycobot 问题] 运行相机示例程序，报告错误重置失败。会不会是硬件问题？`
 
+尽量不要出现在这样的标题中：
+* `为什么我的电路板又不工作了？`
+* `为什么我的代码不起作用？`
+* `为什么我的屏幕是黑色的？`
+* `[Mycobot 问题] 我收到了开发板，为什么开发板屏幕是红色的，而且有一小行文字？`
+* `我运行了一个程序，但出了点问题。`
 
-### 5 Question Template
+### 7 内容
 
+如果被问到一个问题，首先站在回答者的角度：
+* 首先，我需要知道对方想做什么，要达到的目标是什么。
+* 为了实现这一目标，他提到了哪些步骤？
+* 实际上，使用了哪些具体步骤，然后在哪个步骤发生了问题，以便我可以尝试根据他的步骤重现该现象。如果这个问题看起来很难解决，并且没有重现它的步骤，那么重现可能需要很多时间，所以让我们把它放在一边，先解决其他问题。
+* 出现的具体问题是什么，如果他只是陈述问题，我怎么知道他出了什么问题，也许是身体不适？所以这很重要，我需要请他解释问题的现象，并指出与预期有什么不同，否则我必须猜测比较和预期有什么区别，解决问题的时间增加了。
+* 如果有问题，我可能需要他的日志文件，这样我就可以根据日志分析源代码，否则可能很难解决问题，那么这个问题可以稍后查看。
+总之，您可以提出以下问题：
 
-Try to ask questions as elegantly as possible, without adding redundant modal particles, complaining vocabulary, considering every word and punctuation, thinking about the problem from the perspective of the answerer, and how to let the answerer help me solve the problem quickly. Too few words will make it difficult to describe the question, and too many words will make the answerer impatient.
+* 详细说明你的目标，你想做什么，以及现象应该是什么样子。
+* 有没有我参考的文档、代码或教程？
+* 如何重现错误：如何详细操作，详细编写每个步骤，直到问题发生。
+* 详细说明错误发生时发生了什么，以及它与预期有何不同，并且需要证明问题确实发生了。
+* 附上日志文件，以及截图，甚至视频，日志和截图一定要完整，不能只是一小部分，回答者可能会发现一些你从你的完整日志和截图中没有注意到的问题，这一点很重要。
+* 另外，粘贴代码时要注意格式。粘贴后不要乱七八糟地显示，看不见。尝试复制它并直接运行它。
+*最后，你需要感谢回答问题的社区朋友。
 
-### 6 Title
-
-No matter where the question is asked (including `QQ group`), prepare a title of about `30` words for your question, clarifying the central idea of the question, including:
-* It is necessary to clearly distinguish the type of problem, whether it is a question to ask, a bug submission, or an experience sharing and so on. Let answerer instantly locate what you want to do on a screen full of text.
-* One sentence to clarify the core of the problem, such as `run the camera sample program, report an error reset fail, it may be a hardware problem.`
-
-So the title after synthesis can be like this:
-* `[Mycobot question] Running the camera sample program, the error reset fail is reported. Could it be a hardware problem?`
-
-Try to **don't** appear in such a title:
-* `Why is my board not working again?`
-* `Why is my code not working?`
-* `Why is my screen black?`
-* `[Mycobot question] I received the development board, why is the development board screen red and has a small line of text?`
-* `I ran a program and something went wrong.`
-
-You can ask this:
-* `[Mycobot question] My board can't start after I connected the power supply in reverse, how can I tell where the board is burnt, and if so, how can I save it?`
-
-### 7 Content
-
-First stand on the answerer's point of view, if asked a question:
-* First of all, I need to know what the other party wants to do and what the goal is to achieve.
-* In order to achieve this goal, what steps did he refer to?
-* In fact, what specific steps were used, and then at which step the problem occurred, so that I can try to reproduce the phenomenon according to his steps. If this problem seems to be difficult to solve and there are no steps to reproduce it, it may take a lot of time to reproduce, so let's put it aside and solve other problems first.
-* What was the specific problem that arose, and if he only stated the problem, how would I know what was wrong with him, maybe a physical discomfort? So this is very important, I need to ask him to explain the phenomenon of the problem and indicate what is different from the expected, otherwise I have to guess what is the difference between the comparison and the expected, and the time to solve the problem has increased.
-* If there is a problem, I may need his log file, so that I can analyze the source code according to the log, otherwise it may be difficult to solve the problem, then this problem can be looked at later.
-
-In summary, you can ask the following questions:
-
-* Elaborate on your goals, what you want to do, and what the phenomenon should look like.
-* Is there any documentation, code, or tutorial I refer to?
-* How to reproduce the error: how to do it in detail, write each step in detail until the problem occurs.
-* Elaborate on what happened when the error occurred, and how it was different from what was expected, and needed to prove that the problem did occur.
-* Attach log files, as well as screenshots, or even videos, logs and screenshots must be complete, not just a small part, the answerer may find some problems you did not notice from your full log and screenshots, this is very important.
-* In addition, pay attention to the format when pasting the code. Do not display it in a mess after pasting, and it cannot be seen. Try to copy it and run it directly.
-* Finally, you need to thank the community friends who answered the question.
-
-[← Previous Page](../3.4-FAQsandSolutions.md) | [Next Page →](./driver.md)
+[← 上一页](../3.4-FAQsandSolutions.md) | [下一页 →](./driver.md)
