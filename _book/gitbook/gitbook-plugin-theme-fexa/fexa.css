@@ -88,8 +88,7 @@ body {
 
 .header-inner #book-search-input #searchBtn {
   color: #ffffff;
-  margin-left: 3px;
-  margin-right: 3px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
