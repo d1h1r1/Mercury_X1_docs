@@ -172,14 +172,23 @@
 
 由于Mercury水星存在多个视觉传感器，在进行相机参数配置前，首先需要找到左右臂相机对应的编号：
 
-1)运行下列py脚本观测弹窗的相机画面
+1)首先进行相机初始化，在Camera_ID处依次填入0~6数字
 
+#### `obj = camera_detect(Camera_ID = 0, mark_size, mtx, dist, direction)`
 
-观测相机画面，标记该相机对应的编号
+#### `obj = camera_open_loop()`
+开启相机，观测相机画面，标记该相机对应的编号,如果相机无法开启，修改Camera_ID并重复该操作
 
-2)修改py脚本中的相机编号，按照步骤1依次记录相机编号
+2)修改Camera_ID，按照步骤1依次记录相机编号
+
+#### `obj = camera_detect(Camera_ID = 1, mark_size, mtx, dist, direction)`
+
+#### `obj = camera_open_loop()`
 
 3)将左右臂相机对应的编号修改到py脚本的下述位置即可
+#### `ml_obj = camera_detect(Camera_ID = left, mark_size, mtx, dist, direction)`
+
+#### `mr_obj = camera_detect(Camera_ID = right, mark_size, mtx, dist, direction)`
 
 **4.2	相机内参标定**
 
@@ -197,7 +206,8 @@
     ml.set_gripper_enabled(0)
     mr.set_gripper_enabled(0)
 
-手动张开夹爪至以下位置
+手动张开夹爪至最大
+
 
 3）设置夹爪零位
 
@@ -213,8 +223,8 @@
 
 夹爪异常排查：
 
-1)	夹爪无法运动——
-2)	步骤4未完全合拢——
+1)	夹爪无法运动——重复1~4步骤，**若仍然无法运动，联系我方工程师**
+2)	步骤4未完全合拢——步骤2中，不要张至最大，然后设置零点
 
 **6.整机综测**
 
