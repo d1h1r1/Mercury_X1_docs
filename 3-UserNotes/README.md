@@ -115,6 +115,14 @@ https://www.elephantrobotics.com
 | 运输时的外部条件  | 外部使用木架固定，防止挤压 |
 | 木架尺寸| 57\*57*120 |
 
+ <center>
+<img src="../resources/4-FirstInstallAndUse/image/robot1.png" width="300" height="auto" />
+<br>内部包装</center>
+
+<center>
+<img src="../resources/4-FirstInstallAndUse/image/robot2.png" width="300" height="auto" />
+<br>外部包装</center>
+
 
 ### 2 设备储藏
 |      |    |

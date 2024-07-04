@@ -28,18 +28,18 @@
   
 将电源适配器连接上机械臂，也可通过内置电源供电，并将机器人移至空旷区域防止碰撞。
 
-<img src="../resources/7-ExamplesRobotsUsing/image/1.jpg" alt="7.1.1-7" style="zoom：33%;" />
-
-底座后部电源接口位置
-
-<img src="../resources/7-ExamplesRobotsUsing/image/图片2.png" alt="7.1.1-7" style="zoom：33%;" />
-
-电源开关位置
+ <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/1.jpg" width="400" height="auto" />
+<br>底座后部电源接口位置</center>
  
-<img src="../resources/7-ExamplesRobotsUsing/image/图片3.png" alt="7.1.1-7" style="zoom：33%;" />
+ <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/图片2.png" width="400" height="auto" />
+<br>电源开关位置</center>
 
+<center>
+<img src="../resources/7-ExamplesRobotsUsing/image/图片3.png" width="400" height="auto" />
+<br>急停开关位置</center>
 
-急停开关位置
 
 在按下急停开关后机器人将立即停止运动，复位时需将急停开关顺时针旋转，急停开关将自动弹起，之后可上电恢复控制。
 

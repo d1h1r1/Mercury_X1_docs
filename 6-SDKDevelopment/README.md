@@ -21,4 +21,4 @@
 
 ---
 
-[← 上一章](../5-BasicFunctions/README.md) | [下一章 →](../7-SuccessfulCases/7-SuccessfulCases.md)
+[← 上一章](../4-FirstInstallAndUse/README.md) | [下一页 →](../6-SDKDevelopment/6.1-Python/README.md)

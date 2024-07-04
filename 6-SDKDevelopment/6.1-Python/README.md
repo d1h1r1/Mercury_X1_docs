@@ -220,4 +220,4 @@ print(mr.get_angles())
 ```
 
 ----
-[← 上一页](../../4-FirstInstallAndUse/README.md) | [下一页 →](./6.1.2-ApplicationBasePython.md)
+[← 上一页](..//README.md) | [下一页 →](./6.1.2-ApplicationBasePython.md)
