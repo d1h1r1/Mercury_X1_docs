@@ -1,5 +1,9 @@
 # Mercury_X1_docs
-水星Mercury X1轮式人形机器人
+
+<center>
+<img src="./resources/1-ProductIntroduction/image/robot.png" width="400" height="auto" />
+<br>
+水星Mercury X1轮式人形机器人</center>
 
 核心文档
 ---
@@ -61,7 +65,7 @@
     * [2 ROS2 基础](6-SDKDevelopment/6.3-ROS2/6.3.2-ROS2_Basics.md)
     * [3 Rviz2 使用](6-SDKDevelopment/6.3-ROS2/6.3.3-Rviz2Introduction.md)
     * [4 基本功能案例](6-SDKDevelopment/6.3-ROS2/6.3.4-BasicFunction.md)
-* [6 机器人使用场景](7-ExamplesRobotsUsing/7-ExamplesRobotsUsing.md)
+* [6 机器人使用场景](7-ExamplesRobotsUsing/README.md)
   * [6.1 二维码识别与抓取](7-ExamplesRobotsUsing/7.1-stag_detect.md)<br>
   * [6.2 空间移动案例](7-ExamplesRobotsUsing/7.2-robot_move.md)<br>
   * [6.3 多点位移动抓取案例](7-ExamplesRobotsUsing/7.3-move_and_catch.md)<br>
