@@ -1,7 +1,9 @@
 # Mercury_X1_Gitbook
 
+<center>
 <img src =./resources/introduction/introduction-cn.png
-width ="500"  align = "center">
+width ="800"  align = "center">
+</center>
 
 欢迎来到Elephant Robotics水星系列的世界——这里，创新与实用性交织，为具身智能和人形机器人研究提供了一个前所未有的通用硬件平台。我们自豪地呈现三个独特的产品型号，每个都以其卓越的特性，满足您在机器人研究和教育领域的多样化需求。
 
