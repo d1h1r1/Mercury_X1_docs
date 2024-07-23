@@ -4,12 +4,27 @@ This chapter presents classic robotic arm usage scenarios to showcase the produc
 
 - [QR Code Recognition and Grasping](7.1-stag_detect.md)<br>
   The Mercury X1 wheeled humanoid robot's arm is equipped with a 2D camera and gripper to achieve QR code recognition and grasping. The QR code uses stag code, and the stag.detectMarkers function is used to obtain the stag code's camera coordinates. The coordinates are then transformed to the base coordinates using matrix transformation, and the coordinate control function is called for grasping.<br>
+  <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/case1.jpg" width="500" height="auto" />
+<br></center>
 
 - [Spatial Movement Case](7.2-robot_move.md)<br>
   The chassis can be remotely controlled using a keyboard, or the mercury_ros_api library can be used for movement control and navigation of the base.
+  <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/case2.jpg" width="500" height="auto" />
+<br></center>
 
 - [Mobile Grasping Case](7.3-move_and_catch.md)<br>
   This case combines the previous two cases, using navigation to move the Mercury X1 wheeled humanoid robot to a designated location, and then achieving grasping through stag vision recognition.
+  <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/case3.jpg" width="500" height="auto" />
+<br></center>
+
+- [Keyboard typing case](7.4-keyboard.md)<br>
+  This case involves identifying the stage codes in the upper left and upper right corners, calculating the two-dimensional coordinates, three-dimensional coordinates, scaling ratios, and rotation angles of all key positions, and displaying the key positions on the screen. Clicking is achieved by inputting specified keys.
+  <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/case4.jpg" width="500" height="auto" />
+<br></center>
 
 ## Preparations for Using Vision Recognition
 
