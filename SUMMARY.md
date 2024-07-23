@@ -31,6 +31,7 @@
   * [6.1 QR Code Recognition and Grasping](7-ExamplesRobotsUsing/7.1-stag_detect.md)<br>
   * [6.2 Spatial Movement Case](7-ExamplesRobotsUsing/7.2-robot_move.md)<br>
   * [6.3 Multi-Point Movement and Grasping Case](7-ExamplesRobotsUsing/7.3-move_and_catch.md)<br>
+  * [6.4 Keyboard typing Case](7-ExamplesRobotsUsing/7.4-keyboard.md)<br>
   
 ## Support and Services
 
