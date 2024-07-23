@@ -106,7 +106,19 @@ When selecting the installation location for the robot, the cylindrical space di
 <center>
 <img src="../resources/2-ProductFeature/末端法兰.png" width="400" height="auto" />
 <br>
-Figure 2.3.4 End Dimensions</center>
+Figure 2.4.1 End Dimensions</center>
+
+## DH value
+<center>
+<img src="../resources/2-ProductFeature/DH值.jpg" width="600" height="auto" />
+<br>
+Figure2.4.2 DH value</center>
+
+## Arm section
+<center>
+<img src="../resources/2-ProductFeature/X450手臂部分.jpg" width="600" height="auto" />
+<br>
+Figure2.4.3 Arm section</center>
 
 # 5 Electrical Characteristics
 
