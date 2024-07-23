@@ -5,15 +5,27 @@
 
 - [二维码识别与抓取](7.1-stag_detect.md)<br>
   在水星Mercury X1轮式人形机器人机械臂末端装上2D相机及夹爪实现视觉识别二维码抓取，二维码采用stag码，通过stag.detectMarkers函数获取stag码相机系的坐标，在通过矩阵变换获取stag码基于底座的坐标，调用坐标控制函数进行抓取。 <br>
+  <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/case1.jpg" width="500" height="auto" />
+<br></center>
 
 - [空间移动案例](7.2-robot_move.md)<br>
   可使用键盘对底盘进行遥控操作，也可可以调用mercury_ros_api库对底座进行移动控制及导航。
+  <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/case2.jpg" width="500" height="auto" />
+<br></center>
 
 - [移动抓取案例](7.3-move_and_catch.md)<br>
   此案例将前两个案例结合起来，使用导航将水星Mercury X1轮式人形机器人移动至指定地点，然后通过视觉识别stag，实现抓取。
+  <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/case3.jpg" width="500" height="auto" />
+<br></center>
 
 - [键盘打字案例](7.4-keyboard.md)<br>
-  此案例使用导航将水星Mercury X1轮式人形机器人移动至指定地点，然后通过视觉识别stag，实现键盘打字。
+  此案例通过识别左上角与右上角的stag码，计算出全部键位的二维坐标、、三维坐标、缩放比例和旋转角度，并将键位在画面中显示出来，通过输入指定按键实现点击。
+  <center>
+<img src="../resources/7-ExamplesRobotsUsing/image/case4.jpg" width="500" height="auto" />
+<br></center>
 
 ## 视觉识别功能使用前的准备
 
