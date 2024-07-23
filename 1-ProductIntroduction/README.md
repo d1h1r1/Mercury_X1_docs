@@ -29,6 +29,16 @@ The design philosophy of the Mercury X1 wheeled humanoid robot stems from a deep
 | LiDAR, Ultrasonic Sensors, 2D Vision | Rich perception capabilities |
 | Direct Drive Motor | High-performance drive, maximum speed 1.2m/s |
 
+<center>
+<img src="../resources/1-ProductIntroduction/image/image1.jpg" width="500" height="auto" />
+<br>
+</center>
+
+<center>
+<img src="../resources/1-ProductIntroduction/image/image2.jpg" width="500" height="auto" />
+<br>
+</center>
+
 ## Design Goals
 
 | Design Goal | Description | Application Scenarios and Features |
