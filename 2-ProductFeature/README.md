@@ -8,7 +8,7 @@
 |:------------: |:---------------------------: |
 |中文名 |水星X1轮式双臂人形机器人 |
 |名字 |Mercury X1 |
-|整机高度 |1.2米 |
+|整机高度 |1.18米 |
 |自由度 |19 |
 |续航时间 |8小时 |
 |机械臂的最大负载 |1公斤 |
@@ -18,7 +18,6 @@
 |底盘驱动电机 |高性能直驱电机 |
 |最大运行速度 |1.2米/秒 |
 |最大爬升角 |15° |
-|存储空间 |15升 |
 |主控 |6 核 Arm v8.2 64 位 CPU，384 核 Volta™ GPU |
 |掌握计算能力 |21 TOPS|
 |底座 CPU |4 核 ARM Cortex-A57 CPU |
@@ -78,44 +77,16 @@
 | 其他 I/O  | 2个UART串口|
 
 
-### 左臂主控制器规格表
+### 左右臂副控制器规格表
 
 | 指标            | 参数         |
 | :---------------: | :----------------: |
-| 主控     | 左臂主控      |
-| 主控型号 | ESP32           |
+| 副控     | 左右臂副控      | 
+| 副控型号 | ESP32           |
 | 核心参数 | 240MHz dual core. <br> 600 DMIPS, 520KB SRAM. <br> Wi-Fi, dual mode Bluetooth |
 | 辅控Flash | 4MB                |
 | LED显示 | 5X5 RGB |
 
-### 右臂主控制器规格表
-
-| 指标            | 参数         |
-| :---------------: | :----------------: |
-| 主控     | 右臂主控      |
-| 主控型号 | ESP32           |
-| 核心参数 | 240MHz dual core. <br> 600 DMIPS, 520KB SRAM. <br> Wi-Fi, dual mode Bluetooth |
-| 辅控Flash | 4MB                |
-| LED显示 | 5X5 RGB |
-
-### 辅控制器规格表
-
-| 指标            | 参数          |
-| :--------------: | :----------------: |
-| 辅控 | Jetson Nano          |
-| 辅控型号 | Jetson Nano 4G       |
-| AI Performance | 472 GFLOPS |
-| GPU | 128-core NVIDIA Maxwell™ architecture GPU              |
-| GPU Max Frequency | 921MHz |
-| CPU | Quad-core ARM® Cortex®-A57 MPCore processor |
-| CPU Max Frequency| 1.43GHz           |
-| Memory | 4GB 64-bit LPDDR4
-| 25.6GB/s|
-| CSI Camera | 1 个 CSI Camera        |
-| USB* | 1x USB3.0(5 Gbps)<br>2x  USB 2.0   |
-| Mechanical |69.6mmx45mm<br>260-pin SO-DIMM connector |
-
----
 
 # 4 结构尺寸参数
 
