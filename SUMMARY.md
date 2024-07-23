@@ -31,6 +31,7 @@
   * [6.1 二维码识别与抓取](7-ExamplesRobotsUsing/7.1-stag_detect.md)<br>
   * [6.2 空间移动案例](7-ExamplesRobotsUsing/7.2-robot_move.md)<br>
   * [6.3 多点位移动抓取案例](7-ExamplesRobotsUsing/7.3-move_and_catch.md)<br>
+  * [6.4 键盘打字案例](7-ExamplesRobotsUsing/7.4-keyboard.md)<br>
 
 ## 支持与服务
 
