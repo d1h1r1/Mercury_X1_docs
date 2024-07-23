@@ -107,9 +107,21 @@
 
 ## 双臂末端法兰尺寸
 <center>
-<img src="../resources/2-ProductFeature/末端法兰.png" width="400" height="auto" />
+<img src="../resources/2-ProductFeature/末端法兰.png" width="600" height="auto" />
 <br>
-图2.3.4 末端尺寸</center>
+图2.4.1 末端尺寸</center>
+
+## DH值
+<center>
+<img src="../resources/2-ProductFeature/DH值.jpg" width="600" height="auto" />
+<br>
+图2.4.2 DH值</center>
+
+## 手臂部分
+<center>
+<img src="../resources/2-ProductFeature/X450手臂部分.jpg" width="600" height="auto" />
+<br>
+图2.4.3 手臂部分</center>
 
 
 # 5 电气特性参数
