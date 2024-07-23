@@ -4,31 +4,30 @@
 
 ## 1 Machine Specifications
 
-| Indicator | Parameter |
+| Product Model | Mercury X1 |
 |:------------: |:---------------------------: |
-| Chinese Name | Mercury X1 Wheeled Dual-Arm Humanoid Robot |
-| Name | Mercury X1 |
-| Overall Height | 1.2 meters |
-| Degrees of Freedom | 19 |
-| Battery Life | 8 hours |
-| Maximum Load of Robotic Arm | 1 kilogram |
-| Repeatability of Robotic Arm | ±0.05 millimeters |
-| Net Weight | 55KG |
-| Operating Voltage | DC24V/9.2A |
-| Chassis Drive Motor | High-performance direct drive motor |
-| Maximum Running Speed | 1.2 meters/second |
+| Product Height | 1.18m |
+| Working Voltage | 24V |
+| Degree of Freedom | 19DOF |
+| Battery life | 8 hours |
+| Maximum Payload | 1KG |
+| Net weight | 55KG |
+| Repeatability | ± 0.05mm |
+| Drive Motor | High performance direct drive motors |
+| Maximum Operating Speed | 1.2m/s |
 | Maximum Climbing Angle | 15° |
-| Storage Space | 15 liters |
-| Main Control | 6-core Arm v8.2 64-bit CPU, 384-core Volta™ GPU |
+| Storage Space | 15L |
+| Main Controller GPU | 6-Core Arm v8.2 64-bit CPU，384-Core Volta™ GPU |
 | Computing Power | 21 TOPS |
-| Chassis CPU | 4-core ARM Cortex-A57 CPU |
-| Chassis GPU | 128 NVIDIA CUDA® cores |
-| Screen | 9-inch touch screen |
-| Sensors | LiDAR, ultrasonic radar, 2D vision |
+| Main Controller CPU | 4-Core ARM Cortex-A57 CPU |
+| Mobile Base Controller | 128 NVIDIA CUDA® cores |
+| Screen | 9-inch Touching Screen |
+| Mobile Sensors | LIDAR, Ultrasonic Radar, 2D Vision |
 | 3D Camera | Orbbec Deeyea |
-| Microphone | Linear 4-microphone, 5 meters 180° pickup |
-| IO | 24V 6 inputs, 6 outputs 2A |
-| Communication Methods | CAN bus/WIFI/Ethernet/Bluetooth/USB/Serial Port |
+| Microphone | Line array 4 microphones，5m 180° pickup |
+| IO | 24V 6 Input, 6 Output |
+| Communication | CAN Bus/WIFI/Network port/Bluetooth/USB serial port |
+
 
 ## 2 Basic Software Function Support
 
@@ -74,44 +73,16 @@
 | USB Interface | 1 USB 3.2 2.0 (10 Gbps) <br> 2 USB 2.0 interfaces |
 | Other I/O | 2 UART serial ports |
 
-### Left Arm Main Controller Specifications
+### Left & Right Arm Sub Controller Specifications
 
 | Indicator | Parameter |
 | :---------------: | :----------------: |
-| Main Control | Left Arm Main Control |
-| Main Control Model | ESP32 |
+| Sub Control | Left & Right Arm Sub Control |
+| Sub Control Model | ESP32 |
 | Core Parameters | 240MHz dual core. <br> 600 DMIPS, 520KB SRAM. <br> Wi-Fi, dual mode Bluetooth |
 | Sub-Control Flash | 4MB |
 | LED Display | 5X5 RGB |
 
-### Right Arm Main Controller Specifications
-
-| Indicator | Parameter |
-| :---------------: | :----------------: |
-| Main Control | Right Arm Main Control |
-| Main Control Model | ESP32 |
-| Core Parameters | 240MHz dual core. <br> 600 DMIPS, 520KB SRAM. <br> Wi-Fi, dual mode Bluetooth |
-| Sub-Control Flash | 4MB |
-| LED Display | 5X5 RGB |
-
-### Sub-Controller Specifications
-
-| Indicator | Parameter |
-| :--------------: | :----------------: |
-| Sub-Control | Jetson Nano |
-| Sub-Control Model | Jetson Nano 4G |
-| AI Performance | 472 GFLOPS |
-| GPU | 128-core NVIDIA Maxwell™ architecture GPU |
-| GPU Max Frequency | 921MHz |
-| CPU | Quad-core ARM® Cortex®-A57 MPCore processor |
-| CPU Max Frequency | 1.43GHz |
-| Memory | 4GB 64-bit LPDDR4 |
-| 25.6GB/s |
-| CSI Camera | 1 CSI Camera |
-| USB* | 1x USB3.0(5 Gbps)<br>2x USB 2.0 |
-| Mechanical | 69.6mmx45mm<br>260-pin SO-DIMM connector |
-
----
 
 # 4 Structural Dimensions
 
