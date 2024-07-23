@@ -30,6 +30,16 @@
 | 激光雷达、超声波传感器、2D视觉 | 丰富感知能力 |
 | 直驱电机 | 高性能驱动，最大速度1.2m/s |
 
+<center>
+<img src="../resources/1-ProductIntroduction/image/image1.jpg" width="500" height="auto" />
+<br>
+</center>
+
+<center>
+<img src="../resources/1-ProductIntroduction/image/image2.jpg" width="500" height="auto" />
+<br>
+</center>
+
 ## 设计目标
 
 | 设计目标               | 描述                                                                                                                | 应用场景及特点                                                                           |
