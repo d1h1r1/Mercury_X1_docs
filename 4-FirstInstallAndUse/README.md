@@ -67,7 +67,7 @@ Click the power switch and ensure that the emergency stop is in the reset state 
 <img src="../resources/4-FirstInstallAndUse/image/robot4.png" width="400" height="auto" />
 <br>Screen On</center>
 
-Enter the login interface and input the power-on password **elephant**
+Enter the login interface and input the power-on password **Elephant**
 
 <!-- ## Power Status Display
 
