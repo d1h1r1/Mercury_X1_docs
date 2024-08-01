@@ -68,7 +68,7 @@
 <img src="../resources/4-FirstInstallAndUse/image/robot4.png" width="400" height="auto" />
 <br>屏幕点亮</center>
 
-进入登录界面后输入开机密码**elephant**
+进入登录界面后输入开机密码**Elephant**
 
 <!-- ## 电源状态显示
 
